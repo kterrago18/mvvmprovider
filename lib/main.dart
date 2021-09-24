@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvvmprovider/notifiers/post_notifier.dart';
+import 'package:mvvmprovider/screens/add_post_screen.dart';
 import 'package:mvvmprovider/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -33,6 +34,9 @@ class MyAppState extends State<MyApp> {
       home: const HomeScreen(
         title: 'MVVM with Provider',
       ),
+      routes: {
+        "/add_post": (context) => const AddPostScreen(),
+      },
     );
   }
 }

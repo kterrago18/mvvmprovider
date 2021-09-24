@@ -46,11 +46,21 @@ class PostViewState extends State<PostView> {
                   Expanded(
                     flex: 1,
                     child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Text(
-                          postViewModel!.post.title.toString(),
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                        )),
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            postViewModel!.post.title.toString(),
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            postViewModel!.post.body.toString(),
+                            style: const TextStyle(color: Colors.blue),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),

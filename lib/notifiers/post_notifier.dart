@@ -5,6 +5,11 @@ import 'package:mvvmprovider/services/api_service.dart';
 class PostNotifier extends ChangeNotifier {
   var _postList = <Post>[];
 
+  addPostToList(Post post) {
+    _postList.add(post);
+    notifyListeners();
+  }
+
   setPostList(List<Post> postList) {
     _postList = [];
     _postList = postList;
@@ -12,4 +17,8 @@ class PostNotifier extends ChangeNotifier {
   }
 
   List<Post> getPostList() => _postList;
+
+  Future<bool> uploadPost(Post post) async {
+    return await ApiService.addPost(post, this);
+  }
 }
